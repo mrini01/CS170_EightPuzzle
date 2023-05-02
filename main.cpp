@@ -9,13 +9,36 @@ int main() {
     cin >> userInput;
 
     if (userInput == 1) {
-        int 
-
+        cout << "Puzzle" << endl;
     }
 
+    else {
+        const int ROWS = 3;
+        const int COLS = 3;
+        int x;
+        int n;
+        int m;
+        bool hasZero = false;
 
-    // else {
+        int puzzle[ROWS][COLS];
+        cout << "Enter your puzzle, use a zero to represent the blank." << endl;
+        cout << "Enter the first row, use space or tabs between numbers:" << endl;
 
-
-    // }
+        for (int i = 0; i < ROWS; ++i) {
+            for (int j = 0; j < ROWS; ++j) {
+                cin >> x;
+                puzzle[i][j] = x;
+                if (x == 0) {
+                    hasZero = true;
+                    n = i;
+                    m = j;
+                }
+            }
+        }
+        
+        if (!hasZero) {
+            cout << "Puzzle does not contain a 0!" << endl;
+            return 0;
+        }
+    }   
 }
